@@ -1,6 +1,25 @@
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
+import { useContext } from "react";
 const SignUp = () => {
+
+    const {createUser}=useContext(AuthContext)
+    const handleSign=event =>{
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        createUser(email,password)
+        .then(result=>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error =>console.log(error))
+    }
+
     return (
         <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col ">
@@ -9,7 +28,7 @@ const SignUp = () => {
             
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form className="card-body">
+            <form onSubmit={handleSign} className="card-body">
               <div className="form-control ">
                 <label className="label">
                   <span className="label-text">Name</span>
@@ -35,8 +54,8 @@ const SignUp = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn bg-[#1E83F0] text-white hover:bg-[#1376e0]">Login</button>
-                <button className="btn btn-outline border-[#1E83F0] hover:bg-[#1376e0] mt-4 "> <FaGoogle className="text-xl"></FaGoogle> <span className="text-base font-bold">Login</span> </button>
+                <input type="submit" value="Sign up" className="btn bg-[#1E83F0] text-white hover:bg-[#1376e0]" />
+                <button className="btn btn-outline border-[#1E83F0] hover:bg-[#1376e0] mt-4 "> <FaGoogle className="text-xl"></FaGoogle> <span className="text-base font-bold">Signin</span> </button>
               </div>
             </form>
           </div>

@@ -23,7 +23,7 @@ store them on the client-side?
     <p>hello</p>
   </div>
 </div>
-<div className="collapse mb-5 collapse-arrow bg-base-200">
+<div className="collapse mb-20 collapse-arrow bg-base-200">
   <input type="radio" name="my-accordion-2" /> 
   <div className="collapse-title text-xl font-medium">
   Explain My  code  </div>
