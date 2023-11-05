@@ -2,11 +2,42 @@ import { FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import Swal from "sweetalert2";
+import app from "../../firebase/firebase.config";
 const Login = () => {
 
     const { logIn }=useContext(AuthContext);
     // const location = useLocation();
     const navigate = useNavigate();
+    const GoogleProvider = new GoogleAuthProvider();
+    const auth = getAuth(app);
+
+
+
+
+    const googleHandler = ()=>{
+        signInWithPopup(auth,GoogleProvider)
+        .then(result=>{
+            const logIn = result.user;
+            console.log(logIn)
+            // userContext.setUser(logIn)
+            // localStorage.setItem('userData', JSON.stringify(logIn))
+            navigate('/');
+            return Swal.fire({
+              title: 'successfully logged in',
+              icon: 'success',
+              toast: true,
+              position: 'top-end',
+              showConfirmButton: false,
+              timer: 3000
+          });
+        })
+        .catch(error=>{
+            console.error(error)
+        })
+    }
+
 
 
     const handleLog = event =>{
@@ -50,9 +81,12 @@ const Login = () => {
               </div>
               <div className="form-control mt-6">
                 <input type="submit" value="Login" className="btn bg-[#1E83F0] text-white hover:bg-[#1376e0]" />
-                <button className="btn btn-outline border-[#1E83F0] hover:bg-[#1376e0] mt-4 "> <FaGoogle className="text-xl"></FaGoogle> <span className="text-base font-bold">Login</span> </button>
+                
               </div>
             </form>
+            <div className="flex items-center justify-center">
+            <button onClick={googleHandler} className="btn btn-outline border-[#1E83F0] hover:bg-[#1376e0] w-5/6 mb-5"> <FaGoogle className="text-xl"></FaGoogle> <span className="text-base font-bold">Login</span> </button>
+            </div>
           </div>
         </div>
       </div>

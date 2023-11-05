@@ -1,9 +1,40 @@
 import { FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { useContext } from "react";
+import Swal from "sweetalert2";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import app from "../../firebase/firebase.config";
 const SignUp = () => {
 
+
+  const GoogleProvider = new GoogleAuthProvider();
+    const auth = getAuth(app);
+
+
+
+
+    const googleHandler = ()=>{
+        signInWithPopup(auth,GoogleProvider)
+        .then(result=>{
+            const logIn = result.user;
+            console.log(logIn)
+            // userContext.setUser(logIn)
+            // localStorage.setItem('userData', JSON.stringify(logIn))
+            Navigate('/');
+            return Swal.fire({
+              title: 'successfully logged in',
+              icon: 'success',
+              toast: true,
+              position: 'top-end',
+              showConfirmButton: false,
+              timer: 3000
+          });
+        })
+        .catch(error=>{
+            console.error(error)
+        })
+    }
     const {createUser}=useContext(AuthContext)
     const handleSign=event =>{
         event.preventDefault();
@@ -11,6 +42,7 @@ const SignUp = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
+        console.log(name);
 
         createUser(email,password)
         .then(result=>{
@@ -55,9 +87,13 @@ const SignUp = () => {
               </div>
               <div className="form-control mt-6">
                 <input type="submit" value="Sign up" className="btn bg-[#1E83F0] text-white hover:bg-[#1376e0]" />
-                <button className="btn btn-outline border-[#1E83F0] hover:bg-[#1376e0] mt-4 "> <FaGoogle className="text-xl"></FaGoogle> <span className="text-base font-bold">Signin</span> </button>
+                
               </div>
             </form>
+            <div className="flex items-center justify-center">
+            <button onClick={googleHandler} className="btn btn-outline border-[#1E83F0] hover:bg-[#1376e0] w-5/6 mb-5"> <FaGoogle className="text-xl"></FaGoogle> <span className="text-base font-bold">Sign in</span> </button>
+            </div>
+            
           </div>
         </div>
       </div>
