@@ -1,26 +1,19 @@
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
+import JobCard from "../Home/JobCard/JobCard";
 
-const JobTab = () => {
+
+const JobTab = ({ jobs }) => {
     return (
-        <div>
-            <Tabs>
-    <TabList>
-      <Tab>All</Tab>
-      <Tab>Remote</Tab>
-      <Tab>Hybrid</Tab>
-      <Tab>On-Site</Tab>
-      <Tab>Full Time</Tab>
-    </TabList>
-
-    <TabPanel>
-      <h2>Any content 1</h2>
-    </TabPanel>
-    <TabPanel>
-      <h2>Any content 2</h2>
-    </TabPanel>
-  </Tabs>
-        </div>
+      <div className="grid grid-cols-3 gap-14 container mx-auto">
+        {
+          jobs.map(
+            (job=> <JobCard
+              key={job._id}
+              job={job}
+              >   
+              </JobCard>)
+          )
+        }
+      </div>
     );
 };
 
