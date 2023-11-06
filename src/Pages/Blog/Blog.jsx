@@ -1,7 +1,7 @@
 
 const Blog = () => {
     return (
-        <div className="mt-5">
+        <div className="min-h-screen">
             <h1 className="text-center text-4xl font-bold mb-10 ">Blog page</h1>
            <div className="container mx-auto mb-4">
            <div className="collapse collapse-arrow mb-5 bg-base-200">

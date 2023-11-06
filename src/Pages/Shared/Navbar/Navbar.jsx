@@ -15,11 +15,17 @@ const Navbar = () => {
 
     
     const links = <>
-      <li><a className="font-bold hover:underline  font hover:bg-[#222B38] hover:text-white " >Home</a></li>
-      <li><Link className="hover:text-white  font font-bold hover:underline  hover:bg-transparent ">All Jobs</Link></li>
-      <li><Link className="hover:text-white  font font-bold hover:underline  hover:bg-transparent ">Applied Jobs</Link></li>
-      <li><Link className="hover:text-white  font font-bold hover:underline  hover:bg-transparent ">Add A Job</Link></li>
+      <li><Link className="font-bold hover:underline  font hover:bg-[#222B38] hover:text-white " to={'/'} >Home</Link></li>
+      <li><Link className="hover:text-white  font font-bold hover:underline  hover:bg-transparent " to={'/alljob'}>All Jobs</Link></li>
+      <li><Link className="hover:text-white  font font-bold hover:underline  hover:bg-transparent " to={'/addjob'}>Add A Job</Link></li>
+      {
+        user ? 
+        <>
+        <li><Link className="hover:text-white  font font-bold hover:underline  hover:bg-transparent ">Applied Jobs</Link></li>
       <li><Link className="hover:text-white  font font-bold hover:underline  hover:bg-transparent ">My Jobs</Link></li>
+        </>:
+        ""
+      }
       <li><Link to={'/blog'} className="hover:text-white  font font-bold hover:underline  hover:bg-transparent ">Blog</Link></li>
     </>
     return (
@@ -48,8 +54,8 @@ const Navbar = () => {
         < >
         <img src={user?.photoURL} className="rounded-full  w-[50px] h-[50px]"  alt="" />
         <div>
-        <p className="text-white font-medium">{user.displayName}</p>
-        <p className="text-white font-medium">{user.email}</p>
+        <p className="text-white font font-medium">{user.displayName}</p>
+        <p className="text-white font font-medium">{user.email}</p>
         </div>        
 
     <button onClick={handleLogOut}> 

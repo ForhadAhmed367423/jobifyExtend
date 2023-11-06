@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import logo from "../../../../public/logo.png"
 const Footer = () => {
     return (
-<footer className="footer p-10 bg-[#222B38] text-white">
+      <div className="">
+        <footer className="footer p-10 bg-[#222B38] text-white ">
   <aside>
     <img  className="mb-4 w-36 h-20" src={logo} alt="" />
     <p className=""><Link to={'/'} className="link link-hover">Jobify Extend</Link><br/>alright reserved &#169;Jobify</p>
@@ -28,6 +29,7 @@ const Footer = () => {
     <a className="link link-hover">Cookie policy</a>
   </nav>
 </footer>
+      </div>
     );
 };
 

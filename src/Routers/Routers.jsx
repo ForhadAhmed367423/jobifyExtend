@@ -4,6 +4,9 @@ import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SingnUp/SignUp";
 import Blog from "../Pages/Blog/Blog";
+import AddJob from "../Pages/AddJob/AddJob";
+import PrivetRoutes from "./PrivetRoutes";
+import AllJobs from "../Pages/AllJobs/AllJobs";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +28,14 @@ const router = createBrowserRouter([
         {
             path:'/blog',
             element:<Blog></Blog>
+        },
+        {
+            path:'/addjob',
+            element: <PrivetRoutes><AddJob></AddJob></PrivetRoutes>
+        },
+        {
+            path:'/alljob',
+            element:<AllJobs></AllJobs>
         }
       ]
     },
