@@ -16,8 +16,7 @@ const Home = () => {
     const tab3 =jobs.filter(job=> job.type==="onSite")
     const tab4 =jobs.filter(job=> job.type==="fullTime")
     const tab5 =jobs.filter(job=> job.type==="partTime")
-    console.log(tab1)
-    console.log(jobs)
+    
     return (
         <div>
             <Banner></Banner>

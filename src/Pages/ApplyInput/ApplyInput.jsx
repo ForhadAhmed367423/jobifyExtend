@@ -19,7 +19,7 @@ const ApplyInput = () => {
             const jobsData = { name,userName,email,link };
             console.log(jobsData);
     
-            fetch("http://localhost:5000/jobs",{
+            fetch("http://localhost:5000/appliedJob",{
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -43,7 +43,7 @@ const ApplyInput = () => {
             });
         };
     return (
-        <div className="min-h-screen bg-base-100">
+        <div className="min-h-screen bg-base-100 ">
             <form onSubmit={handleJobs}>
             <input type="text" name="userName" defaultValue={user?.displayName} readOnly  />
             <input type="email" name="email" id="" defaultValue={user?.email} readOnly />

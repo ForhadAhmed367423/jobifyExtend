@@ -10,7 +10,7 @@ const Blog = () => {
            <div className="container mx-auto mb-4">
            <div className="collapse collapse-arrow mb-5 bg-base-200">
   <input type="radio" name="my-accordion-2" /> 
-  <div className="collapse-title text-xl font-medium">
+  <div className="collapse-title text-xl font-medium ">
   What is an access token and refresh token? How do they work and where should we
 store them on the client-side?
   </div>

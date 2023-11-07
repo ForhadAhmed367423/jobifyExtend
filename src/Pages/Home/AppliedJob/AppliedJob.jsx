@@ -1,8 +1,15 @@
+import { useLoaderData } from "react-router-dom";
 
 const AppliedJob = () => {
+    const appliedJobs = useLoaderData();
+    console.log(appliedJobs)
     return (
-        <div>
-            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, dicta!</h1>
+        <div className="min-h-screen">
+            {
+                appliedJobs.map(jobs=> <h1
+                key={jobs._id}
+                >{jobs.name}</h1>)
+            }
         </div>
     );
 };
