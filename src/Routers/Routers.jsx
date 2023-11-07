@@ -11,6 +11,7 @@ import CardDetails from "../Pages/Home/JobCard/CardDetails/CardDetails";
 import AppliedJob from "../Pages/Home/AppliedJob/AppliedJob";
 import MyJob from "../Pages/MyJob/MyJob";
 import Eroor from "../eroor";
+import ApplyInput from "../Pages/ApplyInput/ApplyInput";
 
 const router = createBrowserRouter([
     {
@@ -58,6 +59,11 @@ const router = createBrowserRouter([
         {
             path:'/myJob',
             element:<MyJob></MyJob>
+        },
+        {
+            path:'/resume/:id',
+            element:<ApplyInput></ApplyInput>,
+            loader:({params})=>fetch(`http://localhost:5000/jobs/${params.id}`)
         }
       ]
     },

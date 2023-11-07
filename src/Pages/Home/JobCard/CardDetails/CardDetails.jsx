@@ -1,12 +1,12 @@
 import { useEffect } from "react";
-import {  useLoaderData } from "react-router-dom";
+import {  Link, useLoaderData } from "react-router-dom";
 
 const CardDetails = () => {
     const card = useLoaderData();
     useEffect(()=>{
         document.title="Jobify | Card Details"
     },[])
-    const {image,name,author,type,quantity,description,deadline}= card||{};
+    const {_id,image,name,author,type,quantity,description,deadline}= card||{};
     console.log(card)
     return (
         <div className="card max-w-5xl mx-auto  bg-base-100 shadow-xl container p-5 my-10">
@@ -29,7 +29,7 @@ const CardDetails = () => {
         </div>
         <div className="card-actions mt-2">
         </div>
-        <button className="btn btn-block font bg-[#1376E0] text-white hover:bg-[#1376E0]">Apply Now</button>
+        <Link to={`/resume/${_id}`} className="btn btn-block font bg-[#1376E0] text-white hover:bg-[#1376E0]">Apply Now</Link>
       </div>
     </div>
     

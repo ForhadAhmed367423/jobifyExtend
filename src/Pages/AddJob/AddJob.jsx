@@ -26,15 +26,15 @@ const AddJob = () => {
         const salary = form.salary.value;
         const description = form.description.value;
 
-        const newBooks = { image, name, author, quantity, description, type,deadline,salary };
-        console.log(newBooks);
+        const jobsData = { image, name, author, quantity, description, type,deadline,salary };
+        console.log(jobsData);
 
         fetch("http://localhost:5000/jobs",{
         method: "POST",
         headers: {
             "content-type": "application/json",
         },
-        body: JSON.stringify(newBooks),
+        body: JSON.stringify(jobsData),
         })
         .then((res) => res.json())
         .then((data) => {
