@@ -1,12 +1,15 @@
 import { FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import Swal from "sweetalert2";
 import app from "../../firebase/firebase.config";
 const Login = () => {
 
+  useEffect(() => {
+    document.title= "Jobify | Login";
+  }, []);
     const { logIn }=useContext(AuthContext);
     // const location = useLocation();
     const navigate = useNavigate();

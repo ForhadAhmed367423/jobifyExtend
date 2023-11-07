@@ -7,11 +7,16 @@ import Blog from "../Pages/Blog/Blog";
 import AddJob from "../Pages/AddJob/AddJob";
 import PrivetRoutes from "./PrivetRoutes";
 import AllJobs from "../Pages/AllJobs/AllJobs";
+import CardDetails from "../Pages/Home/JobCard/CardDetails/CardDetails";
+import AppliedJob from "../Pages/Home/AppliedJob/AppliedJob";
+import MyJob from "../Pages/MyJob/MyJob";
+import Eroor from "../eroor";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement:<Eroor></Eroor>,
       children:[
         {
             path:'/',
@@ -37,7 +42,22 @@ const router = createBrowserRouter([
         },
         {
             path:'/alljob',
-            element:<AllJobs></AllJobs>
+            element:<AllJobs></AllJobs>,
+            loader:()=>fetch('http://localhost:5000/jobs')
+        },
+        {
+            path:'/cardDetails/:id',
+            element:<PrivetRoutes><CardDetails></CardDetails></PrivetRoutes>,
+            loader:({params})=>fetch(`http://localhost:5000/jobs/${params.id}`)
+
+        },
+        {
+            path:'/appliedJob',
+            element:<AppliedJob></AppliedJob>
+        },
+        {
+            path:'/myJob',
+            element:<MyJob></MyJob>
         }
       ]
     },

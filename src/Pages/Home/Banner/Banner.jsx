@@ -1,7 +1,7 @@
 import banner from "../../../../public/banner.jpg"
 const Banner = () => {
     return (
-        <div className="min-h-screen">
+        <div className="mb-4">
             <div className="relative"><img src={banner} alt="" />
             <div className="absolute top-[300px] right-[360px] ">
                 <h1 className="text-5xl font text-white font-bold text-center">Find the career you deserve</h1>

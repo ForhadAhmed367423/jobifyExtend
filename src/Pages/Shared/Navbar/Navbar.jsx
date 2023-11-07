@@ -21,8 +21,8 @@ const Navbar = () => {
       {
         user ? 
         <>
-        <li><Link className="hover:text-white  font font-bold hover:underline  hover:bg-transparent ">Applied Jobs</Link></li>
-      <li><Link className="hover:text-white  font font-bold hover:underline  hover:bg-transparent ">My Jobs</Link></li>
+        <li><Link className="hover:text-white  font font-bold hover:underline  hover:bg-transparent " to={'/appliedJob'}>Applied Jobs</Link></li>
+      <li><Link className="hover:text-white  font font-bold hover:underline  hover:bg-transparent " to={'/myJob'}>My Jobs</Link></li>
         </>:
         ""
       }

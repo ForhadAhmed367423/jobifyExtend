@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Rating from "react-rating";
 import Swal from "sweetalert2";
 import 'font-awesome/css/font-awesome.min.css';
 
 const AddJob = () => {
+  useEffect(() => {
+    document.title= "Jobify | Add Jobs";
+  }, []);
     const [rating, setRating] = useState(0);
   const handleRatingChange = (newRating) => {
     setRating(newRating);
@@ -52,8 +55,8 @@ const AddJob = () => {
     return (
         <div>
             <div className="px-[160px] py-[100px]">
-            <h2 className="text-[60px] text-[#FF4E04] font-medium mb-[10px]">
-            Add Books
+            <h2 className="text-[60px]  font-medium mb-[10px]">
+            Add A Job
             </h2>
             <p className="text-[#000] text-[18px] font-normal mb-[38px]">
             Dolor consectetuer posuere maecenas tempor pede tellus. <br /> Nec
@@ -84,6 +87,7 @@ const AddJob = () => {
                   type="text"
                   placeholder="name"
                   name="name"
+                  required
                 />
               </div>
             </div>
@@ -134,6 +138,7 @@ const AddJob = () => {
                 className="rounded-[10px] w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
                 type="date"
                 name="deadline"
+                required
               />
             </div>
            </div>
@@ -146,7 +151,8 @@ const AddJob = () => {
                 className="rounded-[10px] w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
                 placeholder="Salary Range "
                 type="number"
-                name="salary"
+                name="salary" 
+                required
               />
             </div>
 
@@ -174,8 +180,8 @@ const AddJob = () => {
               />
             </div>
             <div>
-              <button className="px-8 py-4 rounded-[30px] bg-[#000] text-white font-semibold text-[18px]">
-                Add Product
+              <button className="px-8 py-4 rounded-[30px] bg-[#1376e0] text-white font-semibold text-[18px]">
+                Add Job
               </button>
             </div>
           </form>

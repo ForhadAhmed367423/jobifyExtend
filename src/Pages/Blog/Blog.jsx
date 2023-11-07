@@ -1,5 +1,9 @@
+import { useEffect } from "react";
 
 const Blog = () => {
+  useEffect(() => {
+    document.title= "Jobify | Blog";
+  }, []);
     return (
         <div className="min-h-screen">
             <h1 className="text-center text-4xl font-bold mb-10 ">Blog page</h1>

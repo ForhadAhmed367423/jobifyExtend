@@ -1,12 +1,15 @@
 import { FaGoogle } from "react-icons/fa";
 import { Link, Navigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Swal from "sweetalert2";
-import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, getAuth, signInWithPopup, updateProfile } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 const SignUp = () => {
 
+  useEffect(() => {
+    document.title= "Jobify | Sign Up";
+  }, []);
 
   const GoogleProvider = new GoogleAuthProvider();
     const auth = getAuth(app);
@@ -19,6 +22,7 @@ const SignUp = () => {
         .then(result=>{
             const logIn = result.user;
             console.log(logIn)
+            
             // userContext.setUser(logIn)
             // localStorage.setItem('userData', JSON.stringify(logIn))
             Navigate('/');
@@ -41,12 +45,16 @@ const SignUp = () => {
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
+        const photo = form.photo.value;
         const password = form.password.value;
         console.log(name);
 
         createUser(email,password)
         .then(result=>{
             const user = result.user;
+            updateProfile(user,{
+              displayName:name, photoURL:photo
+            })
             console.log(user);
         })
         .catch(error =>console.log(error))
@@ -74,6 +82,13 @@ const SignUp = () => {
                 </label>
                 <input type="email" placeholder="email" name="email" className="input input-bordered lg:w-[320px]" required />
               </div>
+              <div className="form-control ">
+                <label className="label">
+                  <span className="label-text">Photo Url</span>
+                </label>
+                <input type="photo url" placeholder="Photo url" name="photo" className="input input-bordered lg:w-[320px]" required />
+              </div>
+
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Password</span>
