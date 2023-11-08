@@ -12,6 +12,7 @@ import AppliedJob from "../Pages/Home/AppliedJob/AppliedJob";
 import MyJob from "../Pages/MyJob/MyJob";
 import Eroor from "../eroor";
 import ApplyInput from "../Pages/ApplyInput/ApplyInput";
+import UpdateCard from "../Pages/UpdateCard/UpdateCard";
 
 const router = createBrowserRouter([
     {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
             path:'/resume/:id',
             element:<ApplyInput></ApplyInput>,
             loader:({params})=>fetch(`http://localhost:5000/jobs/${params.id}`)
+        },
+        {
+            path:'/updateCard/:id',
+            element:<UpdateCard></UpdateCard>
         }
       ]
     },

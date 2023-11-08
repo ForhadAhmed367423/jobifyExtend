@@ -32,7 +32,7 @@ const JobCard = ({job}) => {
           <div className="flex justify-between items-center">
           <Link to={`/cardDetails/${_id}`} className="btn text-white hover:bg-[#013266] bg-[#1376E0]">Details</Link>
           <div className="flex gap-4">
-            <Link className="text-2xl text-[#1376e0] hover:text-[#013266]"> <FaEdit></FaEdit> </Link>
+            <Link to={`/updateCard/${_id}`} className="text-2xl text-[#1376e0] hover:text-[#013266]"> <FaEdit></FaEdit> </Link>
             <Link className="text-2xl text-[#1376e0] hover:text-[#013266]"><FaDeleteLeft></FaDeleteLeft></Link>
           </div>
           </div>
