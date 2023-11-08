@@ -15,7 +15,7 @@ const Blog = () => {
 store them on the client-side?
   </div>
   <div className="collapse-content"> 
-    <p>hello</p>
+    <p>The access token allows for access to different APIs and protected resources. The refresh token lets you mint new access tokens. The id token from OpenID Connect (OIDC) is used by the client to display information about the user.</p>
   </div>
 </div>
 <div className="collapse mb-5 collapse-arrow bg-base-200">
@@ -24,7 +24,11 @@ store them on the client-side?
   What is express js? What is Nest JS?
   </div>
   <div className="collapse-content"> 
-    <p>hello</p>
+    <p>1. Express.js is a small framework that works on top of Node.js web server functionality to simplify its APIs and add helpful new features. <br />
+
+    2.NestJS is a framework for building efficient, scalable Node.js web applications.
+
+    </p>
   </div>
 </div>
 <div className="collapse mb-20 collapse-arrow bg-base-200">
@@ -32,7 +36,7 @@ store them on the client-side?
   <div className="collapse-title text-xl font-medium">
   Explain My  code  </div>
   <div className="collapse-content"> 
-    <p>hello</p>
+    <p>Too much hard i tried and tried.I need one day more to prove my self but unfortunately i do not got time (:  ):</p>
   </div>
 </div>
            </div>
