@@ -18,7 +18,7 @@ const JobCard = ({job,remaing,setRemainig}) => {
         confirmButtonText: "Yes, delete it!"
       }).then((result) => {
         if (result.isConfirmed) {
-          axios.delete(`https://jobify-extend-server-3ma9d8yzf-forhadahmed367423s-projects.vercel.app/jobs/${id}`)
+          axios.delete(`https://jobify-extend-server.vercel.app/jobs/${id}`)
           .then(res=>{
             console.log(res.data)
             if(res.data.deletedCount){

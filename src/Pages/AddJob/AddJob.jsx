@@ -29,10 +29,10 @@ const AddJob = () => {
         const jobsData = { image, name, author, quantity, description, type,deadline,salary };
         console.log(jobsData);
 
-        fetch("https://jobify-extend-server-o6993xgcf-forhadahmed367423s-projects.vercel.app/jobs",{
+        fetch("https://jobify-extend-server.vercel.app/jobs",{
         method: "POST",
         headers: {
-            "content-type": "application/json",
+            "content-type" : "application/json",
         },
         body: JSON.stringify(jobsData),
         })

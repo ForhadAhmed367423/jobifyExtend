@@ -23,7 +23,7 @@ const ApplyInput = () => {
             const jobsData = { name,userName,email,link };
             console.log(jobsData);
     
-            fetch("https://jobify-extend-server-o6993xgcf-forhadahmed367423s-projects.vercel.app/appliedJob",{
+            fetch("https://jobify-extend-server.vercel.app/appliedJob",{
             method: "POST",
             headers: {
                 "content-type": "application/json",
