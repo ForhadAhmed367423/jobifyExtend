@@ -23,12 +23,13 @@ const router = createBrowserRouter([
         {
             path:'/',
             element:<Home></Home>,
-            loader:()=>fetch('http://localhost:5000/jobs')
+            loader:() => fetch('https://jobify-extend-server-3ma9d8yzf-forhadahmed367423s-projects.vercel.app/jobs')
+            
             
         },
         {
             path:'/login',
-            element:<Login></Login>
+            element:<Login></Login>,
         },
         {
             path:'/signup',
@@ -45,18 +46,18 @@ const router = createBrowserRouter([
         {
             path:'/alljob',
             element:<AllJobs></AllJobs>,
-            loader:()=>fetch('http://localhost:5000/jobs')
+            loader:()=>fetch('https://jobify-extend-server-3ma9d8yzf-forhadahmed367423s-projects.vercel.app/jobs')
         },
         {
             path:'/cardDetails/:id',
             element:<PrivetRoutes><CardDetails></CardDetails></PrivetRoutes>,
-            loader:({params})=>fetch(`http://localhost:5000/jobs/${params.id}`)
+            loader:({params})=>fetch(`https://jobify-extend-server-3ma9d8yzf-forhadahmed367423s-projects.vercel.app/jobs/${params.id}`)
 
         },
         {
             path:'/appliedJob',
             element:<PrivetRoutes><AppliedJob></AppliedJob></PrivetRoutes>,
-            loader:()=>fetch('http://localhost:5000/appliedJob')
+            loader:()=>fetch('https://jobify-extend-server-3ma9d8yzf-forhadahmed367423s-projects.vercel.app/appliedJob')
         },
         {
             path:'/myJob',
@@ -65,12 +66,12 @@ const router = createBrowserRouter([
         {
             path:'/resume/:id',
             element:<ApplyInput></ApplyInput>,
-            loader:({params})=>fetch(`http://localhost:5000/jobs/${params.id}`)
+            loader:({params})=>fetch(`https://jobify-extend-server-3ma9d8yzf-forhadahmed367423s-projects.vercel.app/jobs/${params.id}`)
         },
         {
             path:'/updateCard/:id',
             element:<UpdateCard></UpdateCard>,
-            loader:({params})=>fetch(`http://localhost:5000/jobs/${params.id}`)
+            loader:({params})=>fetch(`https://jobify-extend-server-3ma9d8yzf-forhadahmed367423s-projects.vercel.app/jobs/${params.id}`)
         }
       ]
     },

@@ -1,15 +1,19 @@
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Providers/AuthProvider";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 
 const ApplyInput = () => {
     const {user}= useContext(AuthContext);
     const jobs = useLoaderData();
+    useEffect(()=>{
+        document.title="Jobify | Apply"
+    },[])
     const {name}=jobs;
     
     const handleJobs = (event) => {
         event.preventDefault();
+        
     
             const form = event.target;
             console.log(form);
@@ -19,7 +23,7 @@ const ApplyInput = () => {
             const jobsData = { name,userName,email,link };
             console.log(jobsData);
     
-            fetch("http://localhost:5000/appliedJob",{
+            fetch("https://jobify-extend-server-o6993xgcf-forhadahmed367423s-projects.vercel.app/appliedJob",{
             method: "POST",
             headers: {
                 "content-type": "application/json",

@@ -45,7 +45,7 @@ const authInfo = {
     loading,
     createUser,
     logIn,
-    logOut
+    logOut,
 }
 
     return (
