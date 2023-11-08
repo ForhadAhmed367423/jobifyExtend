@@ -2,9 +2,41 @@ import { Link } from "react-router-dom";
 import { FaDeleteLeft } from "react-icons/fa6";
 import { FaEdit } from "react-icons/fa";
 import { motion } from "framer-motion"
-const JobCard = ({job}) => {
+import axios from "axios";
+import Swal from "sweetalert2";
+const JobCard = ({job,remaing,setRemainig}) => {
     const {_id,image,name,author,type,quantity,description,deadline}=job||{};
-    return (
+
+    const handleDelete = id => {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          axios.delete(`http://localhost:5000/jobs/${id}`)
+          .then(res=>{
+            console.log(res.data)
+            if(res.data.deletedCount){
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+              });
+                const remaining = remaing.filter(item=>item._id!==id);
+                setRemainig(remaining);
+            }
+          })
+          
+        }
+      });
+    }
+
+return (
       <motion.div   whileHover={{
         scale: 0.9,
         transition: { duration: 0.5 },
@@ -33,7 +65,7 @@ const JobCard = ({job}) => {
           <Link to={`/cardDetails/${_id}`} className="btn text-white hover:bg-[#013266] bg-[#1376E0]">Details</Link>
           <div className="flex gap-4">
             <Link to={`/updateCard/${_id}`} className="text-2xl text-[#1376e0] hover:text-[#013266]"> <FaEdit></FaEdit> </Link>
-            <Link className="text-2xl text-[#1376e0] hover:text-[#013266]"><FaDeleteLeft></FaDeleteLeft></Link>
+            <Link className="text-2xl text-[#1376e0] hover:text-[#013266]" onClick={()=>handleDelete(_id)}><FaDeleteLeft></FaDeleteLeft></Link>
           </div>
           </div>
         </div>

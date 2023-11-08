@@ -69,7 +69,8 @@ const router = createBrowserRouter([
         },
         {
             path:'/updateCard/:id',
-            element:<UpdateCard></UpdateCard>
+            element:<UpdateCard></UpdateCard>,
+            loader:({params})=>fetch(`http://localhost:5000/jobs/${params.id}`)
         }
       ]
     },
