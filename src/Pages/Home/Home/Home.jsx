@@ -40,7 +40,7 @@ const Home = () => {
 <JobTab jobs={jobs}></JobTab>
 </TabPanel>
 <TabPanel>
-<div className="grid lg:grid-cols-3 md:gap-4 md:grid-cols-1 lg:gap-14 container mx-auto">
+<div className="grid lg:grid-cols-3 md:mb-4 md:gap-4 md:grid-cols-1 lg:gap-14 container mx-auto">
 {
 tab1.map(job=> <JobCard
 key={job._id}
@@ -52,7 +52,7 @@ job={job}
 </div>
 </TabPanel>
 <TabPanel>
-<div className="grid lg:grid-cols-3 md:gap-4 md:grid-cols-1 lg:gap-14 container mx-auto">
+<div className="grid lg:grid-cols-3 md:mb-4 md:gap-4 md:grid-cols-1 lg:gap-14 container mx-auto">
 {
 tab2.map(job=> <JobCard
 key={job._id}
@@ -64,7 +64,7 @@ job={job}
 </div>
 </TabPanel>
 <TabPanel>
-<div className="grid lg:grid-cols-3 md:gap-4 md:grid-cols-3 lg:gap-14 container mx-auto">
+<div className="grid lg:grid-cols-3 md:mb-4 md:gap-4 md:grid-cols-3 lg:gap-14 container mx-auto">
 {
 tab3.map(job=> <JobCard
 key={job._id}
@@ -76,7 +76,7 @@ job={job}
 </div>
 </TabPanel>
 <TabPanel>
-<div className="grid lg:grid-cols-3 md:grid-cols-1 md:gap-4 lg:gap-14 container mx-auto">
+<div className="grid lg:grid-cols-3 md:mb-4 md:grid-cols-1 md:gap-4 lg:gap-14 container mx-auto">
 {
 tab4.map(job=> <JobCard
 key={job._id}
@@ -88,7 +88,7 @@ job={job}
 </div>
 </TabPanel>
 <TabPanel>
-<div className="grid lg:grid-cols-3 md:grid-cols-1 md:gap-4  lg:gap-14 container mx-auto">
+<div className="grid lg:grid-cols-3  md:mb-4 md:grid-cols-1 md:gap-4  lg:gap-14 container mx-auto">
 {
 tab5.map(job=> <JobCard
 key={job._id}
