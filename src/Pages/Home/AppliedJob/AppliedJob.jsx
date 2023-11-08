@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import AppliedCard from "./AppliedCard";
 
 const AppliedJob = () => {
     const appliedJobs = useLoaderData();
@@ -6,9 +7,13 @@ const AppliedJob = () => {
     return (
         <div className="min-h-screen">
             {
-                appliedJobs.map(jobs=> <h1
-                key={jobs._id}
-                >{jobs.name}</h1>)
+                appliedJobs.map(jobs=> 
+                    <AppliedCard
+                    key={jobs._id}
+                    jobs={jobs}
+
+                    ></AppliedCard>
+                    )
             }
         </div>
     );

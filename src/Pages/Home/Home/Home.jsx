@@ -5,6 +5,7 @@ import 'react-tabs/style/react-tabs.css';
 import JobTab from "../../Tabs/JobTab";
 import JobCard from "../JobCard/JobCard";
 import { useEffect } from "react";
+import Testimonial from "../Testimonial/Testimonial";
 
 const Home = () => {
   useEffect(() => {
@@ -96,6 +97,7 @@ const Home = () => {
     </TabPanel>
   </Tabs>
         </div>
+        <Testimonial></Testimonial>
         </div>
     );
 };

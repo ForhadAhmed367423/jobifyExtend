@@ -44,12 +44,28 @@ const ApplyInput = () => {
         };
     return (
         <div className="min-h-screen bg-base-100 ">
-            <form onSubmit={handleJobs}>
-            <input type="text" name="userName" defaultValue={user?.displayName} readOnly  />
-            <input type="email" name="email" id="" defaultValue={user?.email} readOnly />
-            <input type="text" name="link" id="" required placeholder="Enter your resume link" />
-            <input type="submit" value="Submit Application" />
+            <h1 className="text-3xl font font-bold px-10 mt-10 text-center">Apply your job here</h1>
+            <div className="bg-[#F6EEE1] flex justify-center mt-10 container mx-auto rounded-[15px] py-[60px] px-[100px]">
+            <form className="" onSubmit={handleJobs}>
+            <div>
+            <div className="mb-5">
+                <h2 className="font font-medium">Users Name</h2>
+            <input className="rounded-[10px] w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none" type="text" name="userName" defaultValue={user?.displayName} readOnly  />
+            </div>
+            <div className="mb-5">
+            <h2 className="font font-medium">Users Email</h2>
+
+            <input className="rounded-[10px] w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none" type="email" name="email" id="" defaultValue={user?.email} readOnly />
+            </div>
+            <div className="mb-5">
+            <h2 className="font font-medium">Users Resume</h2>
+
+            <input className="rounded-[10px] w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none" type="text" name="link" id="" required placeholder="Enter your resume link" />
+            </div>
+            <input className="px-8 py-4 rounded-[30px] bg-[#1376e0] text-white font-semibold text-[18px]" type="submit" value="Submit Application" />
+            </div>
             </form>
+            </div>
         </div>
     );
 };
