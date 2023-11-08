@@ -5,7 +5,7 @@ import JobCard from "../Home/JobCard/JobCard";
 const JobTab = ({ jobs }) => {
   const [remaing,setRemainig]=useState(jobs);
     return (
-      <div className="grid grid-cols-3 gap-14 container mx-auto">
+      <div className="grid lg:grid-cols-3 md:grid-cols-1 md:gap-4 lg:gap-14 container mx-auto">
         {
           remaing.map(
             (job=> <JobCard
