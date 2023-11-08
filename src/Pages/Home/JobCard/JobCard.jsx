@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 import { FaDeleteLeft } from "react-icons/fa6";
 import { FaEdit } from "react-icons/fa";
+import { motion } from "framer-motion"
 const JobCard = ({job}) => {
     const {_id,image,name,author,type,quantity,description,deadline}=job||{};
     return (
-      <div className="card  bg-base-100 shadow-xl">
+      <motion.div   whileHover={{
+        scale: 0.9,
+        transition: { duration: 0.5 },
+      }}
+      whileTap={{ scale: 0.9 }}
+       className="card  bg-base-100 shadow-xl">
       <figure><img src={image} alt="aa" /></figure>
       <div className="p-3">
         <div className="flex gap-5 items-center mb-2">
@@ -32,7 +38,7 @@ const JobCard = ({job}) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
     );
 };
 
