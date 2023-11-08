@@ -12,7 +12,7 @@ const AllJobs = () => {
         <div  className="min-h-screen my-6">
             <h1 className="text-4xl font font-bold text-center mb-4">Our Jobs</h1>
             <div>
-    <div className="form-control">
+    <div className="flex justify-center items-center my-6 ">
         <div className="input-group">
             <input type="text" placeholder="Search…" className="input input-bordered" />
                 <button className="btn btn-square">
