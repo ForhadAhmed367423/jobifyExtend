@@ -1,8 +1,30 @@
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
+import MyJobsRow from "./MyJobsRow";
 
 const MyJob = () => {
+    const {user}=useContext(AuthContext);
+    const [myJobs,SetMyJobs]=useState([]);
+    const url=`https://jobify-extend-server.vercel.app/jobs?email=${user.email}`;
+    console.log(url)
+
+    useEffect(()=>{
+        fetch(url)
+        .then(res=>res.json())
+        .then(data=>{
+            SetMyJobs(data)
+        })
+    },[url])
+
     return (
-        <div className="min-h-screen">
-            <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, velit? Enim necessitatibus laboriosam aliquid dolore numquam distinctio, asperiores quaerat veritatis.</h1>
+        <div>
+            {
+                myJobs.map(jobs=><MyJobsRow
+                key={jobs._id}
+                jobs={jobs}
+                >
+                </MyJobsRow>)
+            }
         </div>
     );
 };

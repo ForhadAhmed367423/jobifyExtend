@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Rating from "react-rating";
 import Swal from "sweetalert2";
 import 'font-awesome/css/font-awesome.min.css';
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const AddJob = () => {
+  const {user}= useContext(AuthContext);
   useEffect(() => {
     document.title= "Jobify | Add Jobs";
   }, []);
@@ -25,8 +27,9 @@ const AddJob = () => {
         const deadline = form.deadline.value;
         const salary = form.salary.value;
         const description = form.description.value;
+        const userEmail= user.email;
 
-        const jobsData = { image, name, author, quantity, description, type,deadline,salary };
+        const jobsData = { image,userEmail, name, author, quantity, description, type,deadline,salary };
         console.log(jobsData);
 
         fetch("https://jobify-extend-server.vercel.app/jobs",{
@@ -152,6 +155,19 @@ const AddJob = () => {
                 placeholder="Salary Range "
                 type="number"
                 name="salary" 
+                required
+              />
+            </div>
+           <div className="mb-8">
+              <h6 className="text-[#000] text-[20px] font-normal mb-2">
+              Email
+              </h6>
+              <input
+                className="rounded-[10px] w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
+                placeholder="Salary Range "
+                type="email"
+                name="email"
+                defaultValue={user.email} 
                 required
               />
             </div>

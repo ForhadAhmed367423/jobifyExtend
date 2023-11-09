@@ -55,11 +55,11 @@ const router = createBrowserRouter([
         {
             path:'/appliedJob',
             element:<PrivetRoutes><AppliedJob></AppliedJob></PrivetRoutes>,
-            loader:()=>fetch('https://jobify-extend-server.vercel.app/appliedJob')
         },
         {
             path:'/myJob',
-            element:<MyJob></MyJob>
+            element:<MyJob></MyJob>,
+            
         },
         {
             path:'/resume/:id',
