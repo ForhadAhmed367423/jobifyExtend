@@ -57,24 +57,26 @@ const AddJob = () => {
     };
     return (
         <div>
-            <div className="px-[160px] py-[100px]">
-            <h2 className="text-[60px]  font-medium mb-[10px]">
+            <div className="lg:px-[160px] lg:py-[100px] ">
+            <div className="p-3">
+            <h2 className="lg:text-[60px] text-[40px]  font-medium mb-[10px]">
             Add A Job
             </h2>
             <p className="text-[#000] text-[18px] font-normal mb-[38px]">
-            Dolor consectetuer posuere maecenas tempor pede tellus. <br /> Nec
-            eros curae luctus hac elementum penatibus pulvinar <br /> faucibus
+            Dolor consectetuer posuere maecenas tempor. <br /> Nec
+            eros curae luctus hac elementum penatibus <br /> faucibus
             potenti vestibulum blandit.
             </p>
+            </div>
             <div className="bg-[#F6EEE1] rounded-[10px] py-[60px] px-[100px]">
             <form onSubmit={handleAddBooks}>
-            <div className="flex gap-[50px] mb-8">
+            <div className="lg:flex gap-[50px] mb-8">
               <div className="mb-[20px]">
                 <h6 className="text-[#000] text-[20px] font-normal mb-2">
                   Image
                 </h6>
                 <input
-                  className="rounded-[10px] w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
+                  className="rounded-[10px]  w-[270px] lg:w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
                   type="url"
                   placeholder="image"
                   name="image"
@@ -86,7 +88,7 @@ const AddJob = () => {
                   Name
                 </h6>
                 <input
-                  className="rounded-[10px] w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
+                  className="rounded-[10px]  w-[270px] lg:w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
                   type="text"
                   placeholder="name"
                   name="name"
@@ -95,13 +97,13 @@ const AddJob = () => {
               </div>
             </div>
 
-            <div className="flex gap-[50px] mb-8">
+            <div className="lg:flex gap-[50px] mb-8">
                 <div>
                     <h6 className="text-[#000] text-[20px] font-normal mb-2">
                        Job Category
                     </h6>
                     <select
-                    className="rounded-[10px] w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
+                    className="rounded-[10px]  w-[270px] lg:w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
                     name="type">
                     <option value="remote">Remote</option>
                     <option value="onSite">On-Site</option>
@@ -115,20 +117,20 @@ const AddJob = () => {
                         Author Name
                     </h6>
                     <input
-                className="rounded-[10px] w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
+                className="rounded-[10px]  w-[270px] lg:w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
                 type="text"
                 placeholder="Author Name"
                 name="author"
               />
                 </div>
             </div>
-           <div className="flex gap-[50px] mb-8">
+           <div className="lg:flex gap-[50px] mb-8">
            <div className="">
               <h6 className="text-[#000] text-[20px] font-normal mb-2">
                 Job Posting Date
               </h6>
               <input
-                className="rounded-[10px] w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
+                className="rounded-[10px]  w-[270px] lg:w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
                 type="date"
                 name="quantity"
               />
@@ -138,7 +140,7 @@ const AddJob = () => {
                 Applications deadline
               </h6>
               <input
-                className="rounded-[10px] w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
+                className="rounded-[10px] w-[270px] lg:w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
                 type="date"
                 name="deadline"
                 required
@@ -151,7 +153,7 @@ const AddJob = () => {
               Salary range
               </h6>
               <input
-                className="rounded-[10px] w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
+                className="rounded-[10px] w-[270px] lg:w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
                 placeholder="Salary Range "
                 type="number"
                 name="salary" 
@@ -163,7 +165,7 @@ const AddJob = () => {
               Email
               </h6>
               <input
-                className="rounded-[10px] w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
+                className="rounded-[10px] w-[270px] lg:w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
                 placeholder="Salary Range "
                 type="email"
                 name="email"
@@ -172,7 +174,7 @@ const AddJob = () => {
               />
             </div>
 
-            <div className="mb-8 flex items-center gap-2">
+            <div className="mb-8 lg:flex items-center gap-2">
               <h6 className="text-[#000] text-[20px] font-normal mb-2">
                 Rating :
               </h6>
@@ -189,7 +191,7 @@ const AddJob = () => {
                 Short Description
               </h6>
               <input
-                className="rounded-[10px] w-[850px] pt-[16px] pb-[100px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
+                className="rounded-[10px] lg:w-[850px] w-[270px] pt-[16px] pb-[100px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
                 type="text"
                 placeholder="Short Description"
                 name="description"

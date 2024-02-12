@@ -49,24 +49,26 @@ const handleUpdate = (event) => {
         };
     return (
         <div>
-            <div className="px-[160px] py-[100px]">
-            <h2 className="text-[60px]  font-medium mb-[10px]">
-            Add A Job
+            <div className="lg:px-[160px] lg:py-[100px]">
+           <div className="p-3">
+           <h2 className="lg:text-[60px] text-[40px]  font-medium mb-[10px]">
+            Update Your Job
             </h2>
             <p className="text-[#000] text-[18px] font-normal mb-[38px]">
-            Dolor consectetuer posuere maecenas tempor pede tellus. <br /> Nec
-            eros curae luctus hac elementum penatibus pulvinar <br /> faucibus
+            Dolor consectetuer posuere maecenas tempor <br /> Nec
+            eros curae luctus hac elementum penatibus  <br /> faucibus
             potenti vestibulum blandit.
             </p>
+           </div>
             <div className="bg-[#F6EEE1] rounded-[10px] py-[60px] px-[100px]">
             <form onSubmit={handleUpdate}>
-            <div className="flex gap-[50px] mb-8">
+            <div className="lg:flex gap-[50px] mb-8">
               <div className="mb-[20px]">
                 <h6 className="text-[#000] text-[20px] font-normal mb-2">
                   Image
                 </h6>
                 <input
-                  className="rounded-[10px] w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
+                  className="rounded-[10px] w-[250px] lg:w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
                   type="url"
                   defaultValue={image}
                   placeholder="image"
@@ -79,7 +81,7 @@ const handleUpdate = (event) => {
                   Name
                 </h6>
                 <input
-                  className="rounded-[10px] w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
+                  className="rounded-[10px] w-[250px] lg:w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
                   type="text"
                   defaultValue={name}
                   placeholder="name"
@@ -89,13 +91,13 @@ const handleUpdate = (event) => {
               </div>
             </div>
 
-            <div className="flex gap-[50px] mb-8">
+            <div className="lg:flex gap-[50px] mb-8">
                 <div>
                     <h6 className="text-[#000] text-[20px] font-normal mb-2">
                        Job Category
                     </h6>
                     <select
-                    className="rounded-[10px] w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
+                    className="rounded-[10px] w-[250px] lg:w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
                     defaultValue={type}
                     name="type">
                     <option value="remote">Remote</option>
@@ -110,7 +112,7 @@ const handleUpdate = (event) => {
                         Author Name
                     </h6>
                     <input
-                className="rounded-[10px] w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
+                className="rounded-[10px] w-[250px] lg:w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
                 type="text"
                 defaultValue={author}
                 placeholder="Author Name"
@@ -118,13 +120,13 @@ const handleUpdate = (event) => {
               />
                 </div>
             </div>
-           <div className="flex gap-[50px] mb-8">
+           <div className="lg:flex gap-[50px] mb-8">
            <div className="">
               <h6 className="text-[#000] text-[20px] font-normal mb-2">
                 Job Posting Date
               </h6>
               <input
-                className="rounded-[10px] w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
+                className="rounded-[10px] w-[250px] lg:w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
                 type="date"
                 name="quantity"
                 defaultValue={quantity}
@@ -135,7 +137,7 @@ const handleUpdate = (event) => {
                 Applications deadline
               </h6>
               <input
-                className="rounded-[10px] w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
+                className="rounded-[10px] w-[250px] lg:w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
                 type="date"
                 name="deadline"
                 defaultValue={deadline}
@@ -149,7 +151,7 @@ const handleUpdate = (event) => {
               Salary range
               </h6>
               <input
-                className="rounded-[10px] w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
+                className="rounded-[10px] w-[250px] lg:w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
                 placeholder="Salary Range "
                 type="number"
                 name="salary" 
@@ -163,7 +165,7 @@ const handleUpdate = (event) => {
                 Short Description
               </h6>
               <input
-                className="rounded-[10px] w-[850px] pt-[16px] pb-[100px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
+                className="rounded-[10px] w-[250px] lg:w-[400px] pt-[16px] pb-[100px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
                 type="text"
                 placeholder="Short Description"
                 defaultValue={description}

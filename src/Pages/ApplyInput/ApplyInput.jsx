@@ -64,7 +64,7 @@ const ApplyInput = () => {
             <div className="mb-5">
             <h2 className="font font-medium">Users Resume</h2>
 
-            <input className="rounded-[10px] w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none" type="text" name="link" id="" required placeholder="Enter your resume link" />
+            <input className="rounded-[10px] w-[400px] py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none" type="url" name="link" id="" required placeholder="Enter your resume link" />
             </div>
             <input className="px-8 py-4 rounded-[30px] bg-[#1376e0] text-white font-semibold text-[18px]" type="submit" value="Submit Application" />
             </div>
