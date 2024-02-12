@@ -10,7 +10,7 @@ const JobCard = ({job}) => {
 
 return (
       <div   
-       className="card  bg-base-100 shadow-2xl">
+       className="card my-2 bg-base-100 shadow-2xl">
       <div className="overflow-hidden rounded">
       <motion.figure whileHover={{
         scale: 1.2,

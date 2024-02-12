@@ -35,8 +35,11 @@ const Navbar = () => {
       <label tabIndex={0} className="btn btn-ghost lg:hidden ">
         <svg  xmlns="http://www.w3.org/2000/svg" className="h-5 text-white w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </label>
-      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2  rounded-box  text-white " > 
+      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2  rounded-box  text-black w-[200px] bg-white  " > 
         {links}
+        <button onClick={handleLogOut}> 
+        <Link className="btn btn-outline border-black font text-center hover:text-black text-black" >Logout</Link>
+        </button> 
       </ul>
     </div>
     <img className="w-36 h-20" src={logo} alt="" />
@@ -45,6 +48,7 @@ const Navbar = () => {
   <div className="navbar-center hidden lg:flex ">
     <ul className="flex items-center  text-black lg:text-white space-x-5 mr-9">
       {links}
+      
     </ul>
   </div>
 
@@ -58,7 +62,7 @@ const Navbar = () => {
         <p className="text-white font font-medium">See Letest Jobs</p>
         </div>        
 
-    <button onClick={handleLogOut}> 
+    <button className="max-[470px]:hidden  " onClick={handleLogOut}> 
         <Link className="btn btn-outline border-white font text-center hover:text-white text-white" >Logout</Link>
         </button> 
         </>:

@@ -1,10 +1,10 @@
 import { FaGoogle } from "react-icons/fa";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { useContext, useEffect } from "react";
 import Swal from "sweetalert2";
-import { GoogleAuthProvider, getAuth, signInWithPopup, updateProfile } from "firebase/auth";
-import app from "../../firebase/firebase.config";
+import { GoogleAuthProvider, signInWithPopup, updateProfile } from "firebase/auth";
+import auth from "../../firebase/firebase.config";
 const SignUp = () => {
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const SignUp = () => {
   }, []);
 
   const GoogleProvider = new GoogleAuthProvider();
-    const auth = getAuth(app);
+   const navigate = useNavigate();
 
 
 
@@ -25,7 +25,7 @@ const SignUp = () => {
             
             // userContext.setUser(logIn)
             // localStorage.setItem('userData', JSON.stringify(logIn))
-            Navigate('/');
+            navigate('/');
             return Swal.fire({
               title: 'successfully logged in',
               icon: 'success',
