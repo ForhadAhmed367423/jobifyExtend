@@ -65,8 +65,8 @@ const Navbar = () => {
 
 
        <>
-        <Link to={'/login'} className="font text-white font-semibold font">Login</Link>
-        <button className="btn btn-outline border-white font          text-center"><Link to={'signup'} className="font mr-4          text-white">Sign Up</Link>
+        <Link to={'/login'} className="font text-white font-semibold font  max-[470px]:hidden   ">Login</Link>
+        <button className="btn btn-outline border-white font text-center"><Link to={'signup'} className="font mr-4          text-white">Sign Up</Link>
         </button>
        </>
         

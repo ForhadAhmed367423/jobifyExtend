@@ -1,9 +1,15 @@
+import { Parallax } from 'react-parallax';
 
 
 const About = () => {
     return (
         <div className="container mx-auto  rounded-e-lg my-16">
-            <div className="hero min-h-screen  rounded-lg" style={{backgroundImage: 'url(https://i.ibb.co/C02J34V/pexels-vlada-karpovich-4050466-1.png)'}}>
+        <Parallax
+        blur={2}
+        bgImage={'https://i.ibb.co/C02J34V/pexels-vlada-karpovich-4050466-1.png'}
+        strength={500}
+    >
+            <div className="hero min-h-screen  rounded-lg" >
   <div className="hero-overlay bg-opacity-60 rounded-lg"></div>
   <div className="hero-content text-center text-neutral-content">
     <div className="max-w-md">
@@ -13,6 +19,7 @@ const About = () => {
     </div>
   </div>
 </div>
+</Parallax>
         </div>
     );
 };

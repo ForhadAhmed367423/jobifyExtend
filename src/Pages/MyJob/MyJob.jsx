@@ -17,7 +17,7 @@ const MyJob = () => {
     },[url])
 
     return (
-        <div>
+        <div className="min-h-screen">
             {
                 myJobs.map(jobs=><MyJobsRow
                 key={jobs._id}
