@@ -13,11 +13,12 @@ const Home = () => {
     document.title= "Jobify | Home";
   }, []);
     const jobs = useLoaderData();
-    const tab1 =jobs.filter(job=> job.type==="remote")
-    const tab2 =jobs.filter(job=> job.type==="hybrid")
-    const tab3 =jobs.filter(job=> job.type==="onSite")
-    const tab4 =jobs.filter(job=> job.type==="fullTime")
-    const tab5 =jobs.filter(job=> job.type==="partTime")
+    console.log(jobs);
+    const tab1 =jobs?.filter(job=> job.type==="remote")
+    const tab2 =jobs?.filter(job=> job.type==="hybrid")
+    const tab3 =jobs?.filter(job=> job.type==="onSite")
+    const tab4 =jobs?.filter(job=> job.type==="fullTime")
+    const tab5 =jobs?.filter(job=> job.type==="partTime")
     
     return (
         <div>
@@ -42,7 +43,7 @@ const Home = () => {
 <TabPanel>
 <div className="grid lg:grid-cols-3 md:mb-4 md:gap-4 md:grid-cols-1 lg:gap-14 container mx-auto">
 {
-tab1.map(job=> <JobCard
+tab1?.map(job=> <JobCard
 key={job._id}
 job={job}
 >
@@ -54,7 +55,7 @@ job={job}
 <TabPanel>
 <div className="grid lg:grid-cols-3 md:mb-4 md:gap-4 md:grid-cols-1 lg:gap-14 container mx-auto">
 {
-tab2.map(job=> <JobCard
+tab2?.map(job=> <JobCard
 key={job._id}
 job={job}
 >
@@ -66,7 +67,7 @@ job={job}
 <TabPanel>
 <div className="grid lg:grid-cols-3 md:mb-4 md:gap-4 md:grid-cols-3 lg:gap-14 container mx-auto">
 {
-tab3.map(job=> <JobCard
+tab3?.map(job=> <JobCard
 key={job._id}
 job={job}
 >
@@ -78,7 +79,7 @@ job={job}
 <TabPanel>
 <div className="grid lg:grid-cols-3 md:mb-4 md:grid-cols-1 md:gap-4 lg:gap-14 container mx-auto">
 {
-tab4.map(job=> <JobCard
+tab4?.map(job=> <JobCard
 key={job._id}
 job={job}
 >
@@ -90,7 +91,7 @@ job={job}
 <TabPanel>
 <div className="grid lg:grid-cols-3  md:mb-4 md:grid-cols-1 md:gap-4  lg:gap-14 container mx-auto">
 {
-tab5.map(job=> <JobCard
+tab5?.map(job=> <JobCard
 key={job._id}
 job={job}
 >

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { motion } from "framer-motion"
+import "./Jobs.css";
 
 const JobCard = ({job}) => {
     const {_id,image,name,author,type,quantity,description,deadline}=job||{};
@@ -8,13 +9,16 @@ const JobCard = ({job}) => {
     
 
 return (
-      <motion.div   whileHover={{
-        scale: 0.9,
-        transition: { duration: 0.5 },
+      <div   
+       className="card  bg-base-100 shadow-2xl">
+      <div className="overflow-hidden rounded">
+      <motion.figure whileHover={{
+        scale: 1.2,
+        transition: { duration: 1 },
       }}
-      whileTap={{ scale: 0.9 }}
-       className="card  bg-base-100 shadow-xl">
-      <figure><img src={image} alt="aa" /></figure>
+      
+      ><img  src={image} alt="aa" /></motion.figure>
+      </div>
       <div className="p-3">
         <div className="flex gap-5 items-center mb-2">
         <h2 className="card-title font">{name}</h2>
@@ -38,7 +42,7 @@ return (
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
     );
 };
 

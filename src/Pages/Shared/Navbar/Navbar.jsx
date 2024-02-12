@@ -54,8 +54,8 @@ const Navbar = () => {
         < >
         <img src={user?.photoURL} className="rounded-full  w-[50px] h-[50px]"  alt="" />
         <div>
-        <p className="text-white font font-medium">{user.displayName}</p>
-        <p className="text-white font font-medium">{user.email}</p>
+        <p className="text-white font font-medium">Hello,<span className="font-bold">{user?.displayName.split(" ")[0]}</span></p>
+        <p className="text-white font font-medium">See Letest Jobs</p>
         </div>        
 
     <button onClick={handleLogOut}> 

@@ -10,7 +10,7 @@ import AllJobs from "../Pages/AllJobs/AllJobs";
 import CardDetails from "../Pages/Home/JobCard/CardDetails/CardDetails";
 import AppliedJob from "../Pages/Home/AppliedJob/AppliedJob";
 import MyJob from "../Pages/MyJob/MyJob";
-import Eroor from "../eroor";
+// import Eroor from "../eroor";
 import ApplyInput from "../Pages/ApplyInput/ApplyInput";
 import UpdateCard from "../Pages/UpdateCard/UpdateCard";
 
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
-      errorElement:<Eroor></Eroor>,
+    //   errorElement:<Eroor></Eroor>,
       children:[
         {
             path:'/',

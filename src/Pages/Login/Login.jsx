@@ -2,9 +2,9 @@ import { FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
-import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Swal from "sweetalert2";
-import app from "../../firebase/firebase.config";
+import auth from "../../firebase/firebase.config";
 const Login = () => {
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const Login = () => {
     // const location = useLocation();
     const navigate = useNavigate();
     const GoogleProvider = new GoogleAuthProvider();
-    const auth = getAuth(app);
+    
 
 
 
